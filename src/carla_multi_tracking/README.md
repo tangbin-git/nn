@@ -64,7 +64,7 @@ conda activate <env-name>
 
 **参数说明：**
 - `<env-name>`：您的虚拟环境名称，可自定义（如 `carla-tracking`）
-- `python=3.8`：指定 Python 版本为 3.8，确保与项目依赖兼容 
+- `python=3.8`：指定 Python 版本为 3.8，确保与项目依赖兼容
 
 ### 步骤 7：安装项目依赖包
 

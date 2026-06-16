@@ -76,11 +76,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://wengqiuyi.github.io/nn/index%20-%20wk/</loc>
-         <lastmod>2026-06-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://wengqiuyi.github.io/nn/linear_regression/</loc>
          <lastmod>2026-06-16</lastmod>
          <changefreq>daily</changefreq>
@@ -171,37 +166,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://wengqiuyi.github.io/nn/autonomous_vehicle_monitor/monitor/</loc>
-         <lastmod>2026-06-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://wengqiuyi.github.io/nn/bipedal_walker_LR/bipedal_walker_LR/</loc>
-         <lastmod>2026-06-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://wengqiuyi.github.io/nn/carla_2d_deeprl/</loc>
-         <lastmod>2026-06-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://wengqiuyi.github.io/nn/carla_CAM/</loc>
          <lastmod>2026-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wengqiuyi.github.io/nn/carla_ad_gym_rl/carla_ad_gym_rl/</loc>
-         <lastmod>2026-06-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://wengqiuyi.github.io/nn/carla_autonomous_control/</loc>
-         <lastmod>2026-06-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://wengqiuyi.github.io/nn/carla_black_tesla/</loc>
          <lastmod>2026-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -216,22 +186,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://wengqiuyi.github.io/nn/carla_native_assisted_driving_system/</loc>
-         <lastmod>2026-06-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://wengqiuyi.github.io/nn/carla_temporal_collage/</loc>
-         <lastmod>2026-06-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://wengqiuyi.github.io/nn/carla_traffic_sign_recognition/carla_traffic_sign_recognition/</loc>
-         <lastmod>2026-06-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://wengqiuyi.github.io/nn/carla_weather_robustness/</loc>
          <lastmod>2026-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -316,27 +271,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://wengqiuyi.github.io/nn/pilotnet/</loc>
-         <lastmod>2026-06-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://wengqiuyi.github.io/nn/ppo_carla_driving/</loc>
          <lastmod>2026-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wengqiuyi.github.io/nn/rain_sensor_fusion/DEMO_REPORT/</loc>
-         <lastmod>2026-06-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://wengqiuyi.github.io/nn/rl_acc/</loc>
-         <lastmod>2026-06-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://wengqiuyi.github.io/nn/roadsign_drivecore/</loc>
          <lastmod>2026-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -391,11 +331,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://wengqiuyi.github.io/nn/traffic_sign_dectections/</loc>
-         <lastmod>2026-06-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://wengqiuyi.github.io/nn/traffic_sign_detection/</loc>
          <lastmod>2026-06-16</lastmod>
          <changefreq>daily</changefreq>
@@ -407,11 +342,6 @@
     </url>
     <url>
          <loc>https://wengqiuyi.github.io/nn/unsupervised_driving_segmentation/</loc>
-         <lastmod>2026-06-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://wengqiuyi.github.io/nn/vehicle_autonomous_core/</loc>
          <lastmod>2026-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>

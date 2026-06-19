@@ -44,6 +44,7 @@ class AutoCollisionCollector:
         self.target_samples = target_samples
         self.safe_samples = 0
         self.danger_samples = 0
+        self.collision_positions = []
         self.last_safe_capture_time = 0
         self.safe_capture_interval = 2.0  # 安全样本采集间隔(秒)
 
@@ -64,8 +65,7 @@ class AutoCollisionCollector:
         # 如果 labels.csv 不存在，创建表头
         if not os.path.exists(self.labels_file):
             with open(self.labels_file, 'w') as f:
-                f.write("filename,label,risk,min_depth,mean_depth,pos_x,pos_y\n")
-
+                     f.write("filename,label,risk,min_depth,mean_depth,max_depth,std_depth,x,y,z\n")
     def connect(self):
         """连接并初始化无人机"""
         print("🔌 正在连接 AirSim...")
@@ -113,8 +113,8 @@ class AutoCollisionCollector:
             filename = f"{prefix}_{timestamp}_{pos.x_val:.1f}_{pos.y_val:.1f}"
 
             # 计算深度统计
-            min_depth = np.min(depth_image)
-            mean_depth = np.mean(depth_image)
+            max_depth = np.max(depth_image)
+            std_depth = np.std(depth_image)
 
             # 保存伪彩色深度图
             depth_norm = cv2.normalize(depth_image, None, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)
@@ -124,9 +124,9 @@ class AutoCollisionCollector:
 
             # 保存标签到 CSV
             with open(self.labels_file, 'a') as f:
-                f.write(f"{filename},{label},{risk_name},"
-                        f"{min_depth:.2f},{mean_depth:.2f},{pos.x_val:.1f},{pos.y_val:.1f}\n")
-
+                        f.write(f"{filename},{label},{risk_name},"
+                                f"{min_depth:.2f},{mean_depth:.2f},{max_depth:.2f},{std_depth:.2f},"
+                                f"{pos.x_val:.1f},{pos.y_val:.1f},{pos.z_val:.1f}\n")
             if label == 0:
                 self.safe_samples += 1
             else:
@@ -210,6 +210,11 @@ class AutoCollisionCollector:
 
             # 检测新的碰撞事件
             if self.check_collision_event():
+                pos = self.get_position()
+
+                self.collision_positions.append(
+                    (pos.x_val, pos.y_val, pos.z_val)
+                )
                 if self.danger_samples < self.target_samples:
                     print(f"\n💥 碰撞！采集危险样本 ({self.danger_samples + 1}/{self.target_samples})")
                     self.capture_sample(1, "collision")
@@ -521,7 +526,17 @@ class AutoCollisionCollector:
             'safe_ratio': safe_ratio,
             'danger_ratio': danger_ratio
         }
+    def save_collision_log(self):
+        log_file = os.path.join(
+            self.output_dir,
+            "collision_positions.csv"
+        )
 
+        with open(log_file, "w") as f:
+            f.write("x,y,z\n")
+
+            for x, y, z in self.collision_positions:
+                f.write(f"{x:.2f},{y:.2f},{z:.2f}\n")      
 
 def select_mode():
     """交互式选择飞行模式"""
@@ -619,6 +634,7 @@ def main():
         print(f"   安全样本占比: {stats['safe_ratio']:.1f}%")
         print(f"   危险样本占比: {stats['danger_ratio']:.1f}%")
         print(f"   数据保存: {collector.labels_file}")
+        collector.save_collision_log()
         print("=" * 50)
 
 
